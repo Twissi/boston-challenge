@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @challenge.date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @challenge.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @challenge.text %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @challenge.comments %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @challenge.enabled %>
+</p>
+
+<p>
+  <strong>Answerpic:</strong>
+  <%= @challenge.answerPic %>
+</p>
+
+<p>
+  <strong>Answertext:</strong>
+  <%= @challenge.answerText %>
+</p>
+
+<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
+<%= link_to 'Back', challenges_path %>
