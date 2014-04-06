@@ -1,0 +1,19 @@
+@import 'colors';
+
+body{
+  background-color: $background;
+  color: $white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+a, a:link{
+  text-decoration: none;
+  color: $white;
+}
+
+h1{
+  letter-spacing: 1.5px;
+}
