@@ -1,10 +1,12 @@
 @import 'colors';
+@import 'buttons';
+@import 'challenges';
 
 body{
   background-color: $background;
   color: $white;
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   margin: 0;
   padding: 0;
 }
@@ -12,8 +14,45 @@ body{
 a, a:link{
   text-decoration: none;
   color: $white;
+  display: block;
+}
+
+.content{
+  padding: 0 3%;
 }
 
 h1{
   letter-spacing: 1.5px;
+}
+
+.seperator{
+  &:after{
+    content: "";
+    border-bottom: 1px solid $seperatorgrey;
+    border-top: 1px solid $black;
+    display: block;
+    width: 100%;
+  }
+}
+
+.header{
+  @extend .seperator;
+  .headline{
+    padding-right: 30%;
+    position: relative;
+    .counter{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      text-align: right;
+    }
+  }
+  .navi{
+    a, a:link{
+      font-size: 15px;
+      color: $textgrey;
+      padding: 5% 0;
+    }
+  }
 }

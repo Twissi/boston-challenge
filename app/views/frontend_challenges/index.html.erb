@@ -1,31 +1,25 @@
-<h1>Listing challenges</h1>
+<div class="header">
+  <div class="content">
+    <div class="headline">
+      <h1 class="lime">
+        The Boston Challenge
+      </h1>
+      <div class="counter">10 days left</div>
+    </div>
+    <div class="navi">
+      <a href="">About</a>
+    </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Text</th>
-      <th>Comments</th>
-      <th>Enabled</th>
-      <th>Answerpic</th>
-      <th>Answertext</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @challenges.each do |challenge| %>
-      <tr>
-        <td><%= challenge.date %></td>
-        <td><%= challenge.title %></td>
-        <td><%= challenge.text %></td>
-        <td><%= challenge.comments %></td>
-        <td><%= challenge.enabled %></td>
-        <td><%= challenge.answerPic %></td>
-        <td><%= challenge.answerText %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="challenge-list">
+  <% @challenges.each do |challenge| %>
+    <div class="challenge">
+      <div class="content">
+        <div class="date lime"><%= challenge.date %></div>
+        <div class="description"><%= challenge.text %></div>
+        <%= link_to "Solve!", edit_challenge_path(challenge),  class:"button" %>
+      </div>
+    </div>
+  <% end %>
+</div>
