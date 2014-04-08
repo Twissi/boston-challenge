@@ -1,39 +1,33 @@
-<h1>Listing challenges</h1>
+<div class="header">
+  <div class="content">
+    <div class="headline">
+      <h1 class="lime">
+        All Challenges
+      </h1>
+      <div class="info"><%= link_to 'New Challenge', new_challenge_path, class: 'button' %></div>
+    </div>
+    <div class="navi">
+    </div>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Text</th>
-      <th>Comments</th>
-      <th>Enabled</th>
-      <th>Answerpic</th>
-      <th>Answertext</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @challenges.each do |challenge| %>
-      <tr>
-        <td><%= challenge.date %></td>
-        <td><%= challenge.title %></td>
-        <td><%= challenge.text %></td>
-        <td><%= challenge.comments %></td>
-        <td><%= challenge.enabled %></td>
-        <td><%= challenge.answerPic %></td>
-        <td><%= challenge.answerText %></td>
-        <td><%= link_to 'Show', challenge %></td>
-        <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
-        <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Challenge', new_challenge_path %>
+<div class="challenge-list">
+  <% @challenges.each do |challenge| %>
+    <div class="challenge">
+      <div class="content">
+        <div class="date lime"><%= challenge.date %></div>
+        <div class="description">
+          Title: <%= challenge.title %><br/>
+          Text: <%= challenge.text %><br/>
+          Comments: <%= challenge.comments %><br/>
+          Enabled: <%= challenge.enabled %></br>
+          AnswerPic: <%= challenge.answerPic %></br>
+          AnswerText: <%= challenge.answerText %></br>
+        </div>
+        <%= link_to 'Show', challenge, class: 'button' %>
+        <%= link_to 'Edit', edit_challenge_path(challenge), class: 'button' %>
+        <%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+      </div>
+    </div>
+  <% end %>
+</div>

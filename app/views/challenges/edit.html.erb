@@ -1,6 +1,21 @@
-<h1>Editing challenge</h1>
+<div class="header">
+  <div class="content">
+    <div class="headline">
+      <h1 class="lime">
+        <%= @challenge.title %>
+      </h1>
+      <div class="info"><%= @challenge.date %></div>
+    </div>
+    <div class="subline">
+        <%= @challenge.text %>
+    </div>
+    <div class="navi">
+      <%= link_to 'Home', root_path %>
+    </div>
+  </div>
+</div>
+<div class="content">
 
-<%= render 'form' %>
+  <%= render 'form' %>
 
-<%= link_to 'Show', @challenge %> |
-<%= link_to 'Back', challenges_path %>
+</div>
