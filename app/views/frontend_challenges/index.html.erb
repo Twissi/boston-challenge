@@ -1,0 +1,31 @@
+<h1>Listing challenges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Title</th>
+      <th>Text</th>
+      <th>Comments</th>
+      <th>Enabled</th>
+      <th>Answerpic</th>
+      <th>Answertext</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @challenges.each do |challenge| %>
+      <tr>
+        <td><%= challenge.date %></td>
+        <td><%= challenge.title %></td>
+        <td><%= challenge.text %></td>
+        <td><%= challenge.comments %></td>
+        <td><%= challenge.enabled %></td>
+        <td><%= challenge.answerPic %></td>
+        <td><%= challenge.answerText %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
