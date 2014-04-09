@@ -16,9 +16,28 @@
   <% @challenges.each do |challenge| %>
     <div class="challenge">
       <div class="content">
-        <div class="date lime"><%= challenge.date %></div>
-        <div class="description"><%= challenge.text %></div>
-        <%= link_to "Solve!", edit_challenge_path(challenge),  class:"button" %>
+        <div class="date lime">
+          <%= challenge.date %>
+        </div>
+
+        <div class="description">
+          <%= challenge.text %>
+        </div>
+
+        <% if challenge.answerPic.present? %>
+          <%= image_tag challenge.answerPic, class: 'answer_pic' %>
+        <% end %>
+
+        <%= form_for challenge, url: frontend_challenge_path( challenge ) do |f| %>
+          <div>
+            <%= f.text_area :answerText %>
+          </div>
+          <div>
+            <%= f.file_field :answerPic %>
+          </div>
+          <%= f.submit "Solve!", class: 'button' %>
+        <% end %>
+
       </div>
     </div>
   <% end %>
