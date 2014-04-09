@@ -1,6 +1,7 @@
 @import 'colors';
 @import 'buttons';
 @import 'challenges';
+@import 'form';
 
 body{
   background-color: $background;
@@ -9,6 +10,10 @@ body{
   font-size: 18px;
   margin: 0;
   padding: 0;
+  input{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+  }
 }
 
 a, a:link{
@@ -23,6 +28,13 @@ a, a:link{
 
 h1{
   letter-spacing: 1.5px;
+}
+
+.notice{
+  padding: 0 3%;
+}
+.alert{
+  padding: 0 3%;
 }
 
 .seperator{

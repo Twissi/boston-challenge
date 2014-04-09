@@ -1,0 +1,26 @@
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+  background-color: $background;
+  border: 1px solid $buttongrey;
+  padding: 8px 10px;
+  color: $white;
+}
+
+input[type="submit"],
+input[type="button"]{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: $buttongrey;
+  color: $white;
+  border: none;
+  padding: 8px 10px;
+}
