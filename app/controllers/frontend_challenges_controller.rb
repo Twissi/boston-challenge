@@ -2,10 +2,11 @@ class FrontendChallengesController < ApplicationController
   before_action :set_challenge, only: [:update]
 
   def index
-    @challenges = Challenge.all
+    @challenges = policy_scope( Challenge ).order( date: :desc)
   end
 
   def update
+    authorize @challenge
     respond_to do |format|
       if @challenge.update(challenge_params)
         format.html { redirect_to frontend_challenges_path, notice: 'Challenge answer was successfully updated.' }
@@ -20,7 +21,7 @@ class FrontendChallengesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
-      @challenge = Challenge.find(params[:id])
+      @challenge = policy_scope( Challenge ).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,25 +1,28 @@
 class ChallengesController < ApplicationController
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, :only => [:new, :edit, :update, :destroy]
 
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge.all
+    @challenges = policy_scope( Challenge ).order( date: :desc)
+    authorize @challenges
   end
 
   # GET /challenges/1
   # GET /challenges/1.json
   def show
+    authorize @challenge
   end
 
   # GET /challenges/new
   def new
     @challenge = Challenge.new
+    authorize @challenge
   end
 
   # GET /challenges/1/edit
   def edit
+    authorize @challenge
   end
 
   # POST /challenges

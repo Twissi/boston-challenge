@@ -16,7 +16,7 @@
   <% @challenges.each do |challenge| %>
     <div class="challenge">
       <a id="<%= challenge.id %>-toggle" class="date lime toggle-link">
-        <%= challenge.date %>
+        <%= challenge.date.to_date %>
       </a>
       <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">
 
@@ -29,14 +29,16 @@
           <%= image_tag challenge.answerPic, class: 'answer_pic' %>
         <% end %>
 
-        <%= form_for challenge, url: frontend_challenge_path( challenge ) do |f| %>
-          <div>
-            <%= f.text_area :answerText %>
-          </div>
-          <div>
-            <%= f.file_field :answerPic %>
-          </div>
-          <%= f.submit "Solve!", class: 'button' %>
+        <% if  policy( challenge ).update? %>
+          <%= form_for challenge, url: frontend_challenge_path( challenge ) do |f| %>
+            <div>
+              <%= f.text_area :answerText %>
+            </div>
+            <div>
+              <%= f.file_field :answerPic %>
+            </div>
+            <%= f.submit "Solve!", class: 'button' %>
+          <% end %>
         <% end %>
 
       </div>
