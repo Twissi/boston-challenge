@@ -14,3 +14,24 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+(function($){
+	App = {};
+	App.loadToggler = function(){
+		$('.toggle-link').on('click', function(e){
+			console.log(e.target.id);
+			$('#'+e.target.id+"-content").toggle();
+
+		});
+		return true;
+	};
+
+	$(document).ready(function() { 
+		App.loadToggler();
+	});
+
+	window.App = App;
+
+}(window.jQuery));
+
+

@@ -4,11 +4,28 @@
     .content{
       padding: 5%;
     }
+    a, a:link{
+      padding: 20px 5%;
+      position: relative;
+      &.date{
+        padding-right: 10%;
+      }
+    }
     .date{
       font-size: 24px;
-      margin-bottom: 5%;
+
+      &:after {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        content: "+"; 
+        color: $buttongrey; 
+        font-size: 1.5em;
+        margin-top: -0.7em;
+      }
     }
     .description{
+    
     }
   }
 }
