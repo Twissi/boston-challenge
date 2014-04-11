@@ -14,8 +14,10 @@
 <div class="challenge-list">
   <% @challenges.each do |challenge| %>
     <div class="challenge">
-      <div class="content">
-        <div class="date lime"><%= challenge.date %></div>
+      <a id="<%= challenge.id %>-toggle" class="date lime toggle-link">
+        <%= challenge.date %>
+      </a>
+      <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">
         <div class="description">
           Title: <%= challenge.title %><br/>
           Text: <%= challenge.text %><br/>

@@ -1,6 +1,7 @@
 input[type="text"],
 input[type="password"],
 input[type="email"],
+textarea,
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -14,8 +15,14 @@ select {
   color: $white;
 }
 
+textarea{
+  width: 100%;
+  height: 120px;
+}
+
 input[type="submit"],
-input[type="button"]{
+input[type="button"],
+input[type="file"]{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -23,4 +30,7 @@ input[type="button"]{
   color: $white;
   border: none;
   padding: 8px 10px;
+  &.hidden{
+    display: none;
+  }
 }

@@ -18,16 +18,24 @@
 (function($){
 	App = {};
 	App.loadToggler = function(){
-		$('.toggle-link').on('click', function(e){
-			console.log(e.target.id);
+		$('a.toggle-link').on('click', function(e){
+			e.preventDefault();
 			$('#'+e.target.id+"-content").toggle();
+		});
+		return true;
+	};
 
+	App.loadUploader = function(){
+		$('a.uploader-link').on('click', function(e){
+			e.preventDefault();
+			$('#'+e.target.id+"-form").click();
 		});
 		return true;
 	};
 
 	$(document).ready(function() { 
 		App.loadToggler();
+		App.loadUploader();
 	});
 
 	window.App = App;

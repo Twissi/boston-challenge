@@ -6,11 +6,11 @@
 body{
   background-color: $background;
   color: $white;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Verdana, sans-serif;
   font-size: 18px;
   margin: 0;
   padding: 0;
-  input{
+  input, textarea{
     font-family: 'Roboto', Verdana, sans-serif;
     font-size: 18px;
   }

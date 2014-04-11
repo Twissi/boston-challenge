@@ -20,9 +20,8 @@
       </a>
       <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">
 
-
         <div class="description">
-          <%= challenge.text %>
+          # <%= challenge.text %>
         </div>
 
         <% if challenge.answerPic.present? %>
@@ -32,10 +31,11 @@
         <% if  policy( challenge ).update? %>
           <%= form_for challenge, url: frontend_challenge_path( challenge ) do |f| %>
             <div>
-              <%= f.text_area :answerText %>
+              <%= f.text_area :answerText, placeholder: 'How did you solve the challenge?'%>
             </div>
             <div>
-              <%= f.file_field :answerPic %>
+              <a id="<%= challenge.id %>-upload" class="button uploader-link">Add pic</a>
+              <%= f.file_field :answerPic, class:'hidden', id:challenge.id.to_s+'-upload-form' %>
             </div>
             <%= f.submit "Solve!", class: 'button' %>
           <% end %>
