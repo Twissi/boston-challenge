@@ -17,7 +17,7 @@
 <div class="challenge-list">
   <% @challenges.each do |challenge| %>
     <div class="challenge">
-      <a id="<%= challenge.id %>-toggle" class="date lime toggle-link">
+      <a id="<%= challenge.id %>-toggle" class="date toggle-link">
         <%= challenge.date.to_date %>
       </a>
       <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">

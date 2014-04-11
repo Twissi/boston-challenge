@@ -1,6 +1,26 @@
 .challenge-list{
   .challenge{
     @extend .seperator;
+    &:nth-child(4n+1){
+      a, a:link, input[type="submit"]{
+        color: $seafoam;
+      }
+    }
+    &:nth-child(4n+2){
+      a, a:link, input[type="submit"]{
+        color: $strawberry;
+      }
+    }
+    &:nth-child(4n+3){
+      a, a:link, input[type="submit"]{
+        color: $aqua;
+      }
+    }
+    &:nth-child(4n){
+      a, a:link, input[type="submit"]{
+        color: $lime;
+      }
+    }
     a.toggle-link, a:link.toggle-link{
       padding: 20px 3%;
       position: relative;
