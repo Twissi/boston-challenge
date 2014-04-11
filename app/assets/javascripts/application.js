@@ -20,6 +20,7 @@
 	App.loadToggler = function(){
 		$('a.toggle-link').on('click', function(e){
 			e.preventDefault();
+			$('#'+e.target.id).toggleClass("open");
 			$('#'+e.target.id+"-content").toggle();
 		});
 		return true;
