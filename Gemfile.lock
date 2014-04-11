@@ -66,6 +66,7 @@ GEM
     minitest (5.3.2)
     multi_json (1.9.2)
     orm_adapter (0.5.0)
+    pg (0.14.1)
     polyglot (0.3.4)
     pundit (0.2.3)
       activesupport (>= 3.0.0)
@@ -134,6 +135,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
+  pg
   pundit
   rails (= 4.1.0)
   sass-rails (~> 4.0.0)
