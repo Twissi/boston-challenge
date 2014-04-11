@@ -1,5 +1,18 @@
-<h1>New challenge</h1>
+<div class="header">
+  <div class="content">
+    <div class="headline">
+      <h1 class="lime">
+        New Challenge
+      </h1>
+  	</div>
+    <div class="navi">
+      <%= link_to 'All Challenges', challenges_path %>
+    </div>
+  </div>
+</div>
+<div class="content">
+	<p>
+		<%= render 'form' %>
+	</p>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', challenges_path %>
