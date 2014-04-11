@@ -2,12 +2,14 @@
   <div class="content">
     <div class="headline">
       <h1 class="lime">
-        <%= @challenge.title %>
+        <%= @challenge.date.to_date %>
       </h1>
-      <div class="info"><%= @challenge.date %></div>
+      <div class="info">
+        <%= link_to 'Show', challenge_path(@challenge), class: 'button' %>
+      </div>
     </div>
     <div class="subline">
-        <%= @challenge.text %>
+      <%= @challenge.title %>
     </div>
     <div class="navi">
       <%= link_to 'Home', root_path %>
@@ -15,7 +17,7 @@
   </div>
 </div>
 <div class="content">
-
-  <%= render 'form' %>
-
+  <p>
+    <%= render 'form' %>
+  </p>
 </div>

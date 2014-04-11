@@ -34,3 +34,14 @@ input[type="file"]{
     display: none;
   }
 }
+
+.field{
+  margin: 20px 0;
+  label{
+    color: $textgrey;
+    font-size: 15px;
+  }
+  input[type="text"]{
+    width: 100%;
+  }
+}

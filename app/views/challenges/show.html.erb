@@ -1,43 +1,47 @@
-<p id="notice"><%= notice %></p>
-
 <div class="header">
   <div class="content">
     <div class="headline">
       <h1 class="lime">
-        <%= @challenge.title %>
+        <%= @challenge.date.to_date %>
       </h1>
-      <div class="info"><%= @challenge.date %></div>
+      <div class="info">
+        <%= link_to 'Edit', edit_challenge_path(@challenge), class: 'button' %>
+      </div>
     </div>
     <div class="subline">
-        <%= @challenge.text %>
+      <%= @challenge.title %>
     </div>
     <div class="navi">
-      <%= link_to 'Edit', edit_challenge_path(@challenge) %>
       <%= link_to 'Home', root_path %>
     </div>
   </div>
 </div>
 <div class="content">
+  <div class="challenge">
+    <p>
+      # <%= @challenge.text %>
+    </p>
 
-  <p>
-    <strong>Comments:</strong>
-    <%= @challenge.comments %>
-  </p>
+    <% if @challenge.answerPic.present? %>
+      <%= image_tag @challenge.answerPic, class: 'answer_pic' %>
+    <% end %>
 
-  <p>
-    <strong>Enabled:</strong>
-    <%= @challenge.enabled %>
-  </p>
+    <% if @challenge.answerText.present? %>
+      <p>
+        <%= @challenge.answerText %>
+      </p>
+    <% end %>
 
-  <p>
-    <strong>Answerpic:</strong>
-    <%= @challenge.answerPic %>
-  </p>
+    <p>
+      <strong>Comments:</strong>
+      <%= @challenge.comments %>
+    </p>
 
-  <p>
-    <strong>Answertext:</strong>
-    <%= @challenge.answerText %>
-  </p>
+    <p>
+      <strong>Enabled:</strong>
+      <%= @challenge.enabled %>
+    </p>
+  </div>
 </div>
 
 

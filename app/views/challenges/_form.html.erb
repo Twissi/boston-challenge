@@ -21,23 +21,24 @@
   </div>
   <div class="field">
     <%= f.label :text %><br>
-    <%= f.text_field :text %>
+    <%= f.text_area :text %>
   </div>
+  <% if @challenge.answerPic.present? %>
+    <%= image_tag @challenge.answerPic, class: 'answer_pic' %>
+  <% end %>
+  <a id="<%= @challenge.id %>-upload" class="button uploader-link">Add pic</a>
+  <%= f.file_field :answerPic, class:'hidden', id:@challenge.id.to_s+'-upload-form' %>
   <div class="field">
-    <%= f.label :comments %><br>
-    <%= f.number_field :comments %>
+    <%= f.label :answerText %><br>
+    <%= f.text_area :answerText %>
   </div>
   <div class="field">
     <%= f.label :enabled %><br>
     <%= f.check_box :enabled %>
   </div>
   <div class="field">
-    <%= f.label :answerPic %><br>
-    <%= f.text_field :answerPic %>
-  </div>
-  <div class="field">
-    <%= f.label :answerText %><br>
-    <%= f.text_field :answerText %>
+    <%= f.label :comments %><br>
+    <%= f.number_field :comments %>
   </div>
   <div class="actions">
     <%= f.submit %>

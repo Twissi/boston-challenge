@@ -4,9 +4,12 @@
       <h1 class="lime">
         All Challenges
       </h1>
-      <div class="info"><%= link_to 'New Challenge', new_challenge_path, class: 'button' %></div>
+      <div class="info">
+        <%= link_to 'New', new_challenge_path, class: 'button' %>
+      </div>
     </div>
     <div class="navi">
+      <%= link_to 'Home', root_path %>
     </div>
   </div>
 </div>
@@ -15,16 +18,11 @@
   <% @challenges.each do |challenge| %>
     <div class="challenge">
       <a id="<%= challenge.id %>-toggle" class="date lime toggle-link">
-        <%= challenge.date %>
+        <%= challenge.date.to_date %>
       </a>
       <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">
         <div class="description">
-          Title: <%= challenge.title %><br/>
-          Text: <%= challenge.text %><br/>
-          Comments: <%= challenge.comments %><br/>
-          Enabled: <%= challenge.enabled %></br>
-          AnswerPic: <%= challenge.answerPic %></br>
-          AnswerText: <%= challenge.answerText %></br>
+          # <%= challenge.text %><br/>
         </div>
         <%= link_to 'Show', challenge, class: 'button' %>
         <%= link_to 'Edit', edit_challenge_path(challenge), class: 'button' %>
