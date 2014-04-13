@@ -9,16 +9,20 @@
         <span class="title"><%= challenge.title %></span>
       </a>
       <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">
-
         <div class="description">
-          # <%= challenge.text %>
+          # <%= challenge.text %><br/>
         </div>
-
-        <% if challenge.approved? %>
-          <%= render partial: "answer", locals: { challenge: challenge } %>
-        <% elsif policy(challenge).update? %>
-          <%= render partial: "update_challenge", locals: { challenge: challenge } %>
+        <% if challenge.answerPic.present? %>
+          <%= image_tag challenge.answerPic, class: 'answer_pic' %>
         <% end %>
+
+        <% if challenge.answerText.present? %>
+          <p><%= challenge.answerText %></p>
+        <% end %>
+
+        <%= link_to 'Show', admin_challenge_path(challenge), class: 'button' %>
+        <%= link_to 'Edit', edit_admin_challenge_path(challenge), class: 'button' %>
+        <%= link_to 'Destroy', admin_challenge_path(challenge), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
       </div>
     </div>
   <% end %>

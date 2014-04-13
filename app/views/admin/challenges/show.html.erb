@@ -31,6 +31,18 @@
       <strong>Comments:</strong>
       <%= @challenge.comments %>
     </p>
+    <p>
+      <strong>Enabled:</strong>
+      <%= @challenge.enabled %>
+    </p>
+
+    <p>
+      <strong>Approved:</strong>
+      <%= @challenge.approved %>
+    </p>
+    <%= link_to 'Edit', edit_admin_challenge_path(@challenge), class: 'button' %>
+    <%= link_to 'Destroy', admin_challenge_path(@challenge), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
+
   </div>
 </div>
 

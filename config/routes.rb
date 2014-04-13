@@ -3,8 +3,11 @@ BostonChallenge::Application.routes.draw do
 
   devise_for :users
 
-  resources :challenges
-  resources :frontend_challenges, only: [:index, :update]
+  resources :challenges, only: [:index, :show, :update]
 
-  root 'frontend_challenges#index'
+  namespace :admin do
+    resources :challenges
+  end
+
+  root 'challenges#index'
 end
