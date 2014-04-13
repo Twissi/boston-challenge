@@ -1,4 +1,6 @@
 BostonChallenge::Application.routes.draw do
+  get 'pages/about'
+
   devise_for :users
 
   resources :challenges
