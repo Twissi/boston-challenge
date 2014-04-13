@@ -16,7 +16,7 @@ class ChallengePolicy < ApplicationPolicy
 
   def permitted_attributes
     if user.admin?
-      [:date, :title, :text, :enabled]
+      [:date, :title, :text, :enabled, :approved]
     elsif user.ben?
       [:answerPic, :answerText]
     end

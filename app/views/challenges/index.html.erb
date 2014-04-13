@@ -22,6 +22,9 @@
     <div class="challenge">
       <a id="<%= challenge.id %>-toggle" class="date toggle-link">
         <%= challenge.date.to_s(:day_and_month) %>
+        <% if challenge.approved? %>
+          <span class="approved">(approved)</span>
+        <% end %>
         <span class="title"><%= challenge.title %></span>
       </a>
       <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">
