@@ -7,7 +7,7 @@
       <div class="info">10 days left</div>
     </div>
     <div class="navi">
-      <a href="">About</a>
+      <%= link_to 'About', pages_about_path %>
     </div>
   </div>
 </div>
@@ -16,7 +16,8 @@
   <% @challenges.each do |challenge| %>
     <div class="challenge">
       <a id="<%= challenge.id %>-toggle" class="date toggle-link">
-        <%= challenge.date.to_date %>
+        <%= challenge.date.to_s(:day_and_month) %>
+        <span class="title"><%= challenge.title %></span>
       </a>
       <div id="<%= challenge.id %>-toggle-content" class="content" style="display: none;">
 

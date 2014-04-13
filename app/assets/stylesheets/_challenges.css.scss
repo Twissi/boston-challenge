@@ -26,6 +26,11 @@
       position: relative;
       &.date{
         padding-right: 15%;
+        .title{
+          display: block;
+          font-size: 15px;
+          color: $textgrey;
+        }
       }
     }
     .date{
@@ -35,13 +40,13 @@
         position: absolute;
         right: 5%;
         top: 50%;
-        content: "+"; 
-        color: $buttongrey; 
+        content: "+";
+        color: $buttongrey;
         font-size: 1.5em;
         margin-top: -0.7em;
       }
       &.open:after{
-        content: "-"; 
+        content: "-";
       }
     }
     .description{
