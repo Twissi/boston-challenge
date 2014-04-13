@@ -4,7 +4,7 @@ class ChallengePolicy < ApplicationPolicy
       if user.admin?
         scope.all
       else
-        scope.where(enabled: true).where(["date > ?", Time.zone.now-1.day])
+        scope.where(enabled: true).where(["date < ?", Time.zone.now.end_of_day])
       end
     end
   end
