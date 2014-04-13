@@ -40,14 +40,7 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def update?
-    if user.admin?
-      return true
-    elsif user.ben?
-      @challenge.date >= Time.zone.now
-    else
-      puts 'boo'
-      false
-    end
+    true
   end
 
   def edit?
