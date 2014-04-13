@@ -10,6 +10,9 @@
     </div>
     <div class="navi">
       <%= link_to 'Home', root_path %>
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      <% end %>
     </div>
   </div>
 </div>

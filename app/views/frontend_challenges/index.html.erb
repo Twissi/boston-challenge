@@ -7,7 +7,10 @@
       <div class="info">10 days left</div>
     </div>
     <div class="navi">
-      <%= link_to 'About', pages_about_path %>
+      <%= link_to 'Home', root_path %>
+      <% if user_signed_in? %>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      <% end %>
     </div>
   </div>
 </div>

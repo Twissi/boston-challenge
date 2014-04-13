@@ -28,6 +28,7 @@ a, a:link{
 
 h1{
   letter-spacing: 1.5px;
+  line-height: 1.0;
 }
 
 .notice{
@@ -54,17 +55,25 @@ h1{
     position: relative;
     .info{
       position: absolute;
-      bottom: 0;
+      top: 0;
       right: 0;
       width: 30%;
       text-align: right;
     }
   }
   .navi{
+    padding: 5% 0;
     a, a:link{
       font-size: 15px;
       color: $textgrey;
-      padding: 5% 0;
+      display: inline-block;
+      &:after{
+        content: " |";
+        color: $textgrey;
+      }
+      &:last-child:after{
+        content: "";
+      }
     }
   }
 }
