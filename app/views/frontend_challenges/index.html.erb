@@ -8,6 +8,9 @@
     </div>
     <div class="navi">
       <%= link_to 'Home', root_path %>
+      <% if @current_user.admin? %>
+        <%= link_to 'All Challenges', challenges_path %>
+      <% end %>
       <% if user_signed_in? %>
         <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
       <% end %>
