@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 (function($){
@@ -34,7 +33,7 @@
 		return true;
 	};
 
-	$(document).ready(function() { 
+	$(document).ready(function() {
 		App.loadToggler();
 		App.loadUploader();
 	});
