@@ -9,7 +9,9 @@
 </div>
 <div class="content">
 	<p>
-		<%= render 'form' %>
+    <%= form_for(@challenge, :url => [:admin, @challenge]) do |f| %>
+      <%= render f %>
+    <%end%>
 	</p>
 </div>
 
