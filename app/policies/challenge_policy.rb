@@ -1,11 +1,7 @@
 class ChallengePolicy < ApplicationPolicy
   class Scope < Struct.new(:user, :scope)
     def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.where(enabled: true).where(["date < ?", Time.zone.now.end_of_day])
-      end
+      scope.where(enabled: true).where(["date < ?", Time.zone.now.end_of_day])
     end
   end
 
@@ -23,12 +19,11 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def index?
-    user.admin?
+    true # everybody
   end
 
   def show?
-    user.admin?
-    # should probalby be limited to scope with current challenges for ben
+    true # everybody
   end
 
   def create?
@@ -40,11 +35,11 @@ class ChallengePolicy < ApplicationPolicy
   end
 
   def update?
-    true
+    user.present? && (user.ben? || user.admin?)
   end
 
   def edit?
-    update?
+    user.admin?
   end
 
   def destroy?
