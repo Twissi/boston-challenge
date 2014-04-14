@@ -14,6 +14,7 @@
 
     <div class="navi">
       <%= link_to 'The Challenges', root_path %>
+      <%= link_to 'About', pages_about_path %>
       <% if user_signed_in? %>
         <% if current_user.admin? %>
           <%= link_to 'Manage Challenges', admin_challenges_path %>
