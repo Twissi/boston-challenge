@@ -2,17 +2,20 @@
   <div class="content">
     <div class="headline">
       <h1 class="lime">
-        <%= @challenge.date.to_date %>
+        <%= @challenge.date.to_s(:day_and_month) %>
       </h1>
     </div>
-    <div class="subline">
-      <%= @challenge.title %>
+    <div class="navi">
+      <%= link_to 'Home', root_path %>
     </div>
   </div>
 </div>
 
 <div class="content">
   <div class="challenge">
+    <p>
+      <%= @challenge.title %>
+    </p>
     <p>
       # <%= @challenge.text %>
     </p>
@@ -26,12 +29,8 @@
         <%= @challenge.answerText %>
       </p>
     <% end %>
-
-    <p>
-      <strong>Comments:</strong>
-      <%= @challenge.comments %>
-    </p>
   </div>
+  <div class="fb-share-button" data-href="<%= request.original_url %>" data-type="icon_link"></div>
 </div>
 
 

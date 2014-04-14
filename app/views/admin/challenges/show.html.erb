@@ -2,17 +2,21 @@
   <div class="content">
     <div class="headline">
       <h1 class="lime">
-        <%= @challenge.date.to_date %>
+        <%= @challenge.date.to_s(:day_and_month) %>
       </h1>
     </div>
     <div class="subline">
       <%= @challenge.title %>
     </div>
+    <div class="navi">
+      <% if current_user.admin? %>
+          <%= link_to 'Manage Challenges', admin_challenges_path %>
+        <% end %>
+    </div>
   </div>
 </div>
 
 <div class="content">
-  <div class="challenge">
     <p>
       # <%= @challenge.text %>
     </p>
@@ -42,8 +46,6 @@
     </p>
     <%= link_to 'Edit', edit_admin_challenge_path(@challenge), class: 'button' %>
     <%= link_to 'Destroy', admin_challenge_path(@challenge), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
-
-  </div>
 </div>
 
 
