@@ -13,6 +13,7 @@ class ChallengesController < ApplicationController
   # GET /challenges/1.json
   def show
     authorize @challenge
+    set_metatags(@challenge)
   end
 
   # PATCH/PUT /challenges/1
@@ -38,5 +39,11 @@ class ChallengesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
       params.require(:challenge).permit(:date, :title, :text, :comments, :enabled, :approved, :answerPic, :answerText)
+    end
+
+    def set_metatags(challenge)
+      @title = @challenge.title
+      @image = @challenge.answerPic
+      @description = @challenge.text
     end
 end
