@@ -22,7 +22,7 @@
           <%= render partial: "update_challenge", locals: { challenge: challenge } %>
         <% end %>
         <p>
-          <a href="http://m.facebook.com/sharer.php?u=<%= challenge_url(challenge) %>" class="button">Share</a>
+          <%= link_to 'Show', challenge_path(challenge), class: 'button' %>
         </p>
       </div>
     </div>
