@@ -42,8 +42,8 @@ class ChallengesController < ApplicationController
     end
 
     def set_metatags(challenge)
-      @title = @challenge.date.to_s(:day_and_month) + ": " + @challenge.title
+      @title = @challenge.date.to_s(:day_and_month) + ": " + @challenge.title.to_s
       @image = @challenge.answerPic
-      @description = "# " + @challenge.text
+      @description = "# " + @challenge.text.to_s
     end
 end
