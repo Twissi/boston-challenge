@@ -27,6 +27,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'
+  gem 'dotenv-rails'
 end
 
 group :production do
