@@ -1,57 +1,52 @@
 .challenge-list{
-  .challenge{
-    @extend .seperator;
-    &:nth-child(4n+1){
+  .challenge {
+    &:nth-child(3n+1){
       a, a:link, input[type="submit"]{
         color: $seafoam;
       }
     }
-    &:nth-child(4n+2){
+    &:nth-child(3n+2){
       a, a:link, input[type="submit"]{
         color: $strawberry;
       }
     }
-    &:nth-child(4n+3){
+    &:nth-child(3n){
       a, a:link, input[type="submit"]{
         color: $aqua;
       }
     }
-    &:nth-child(4n){
-      a, a:link, input[type="submit"]{
-        color: $lime;
-      }
-    }
-    a.toggle-link, a:link.toggle-link{
-      padding: 20px 3%;
-      position: relative;
-      &.date{
-        padding-right: 15%;
-        .title{
-          display: block;
-          font-size: 15px;
-          color: $textgrey;
-        }
-      }
-    }
     .date{
-      font-size: 24px;
-
       &:after {
         position: absolute;
         right: 5%;
-        top: 50%;
-        content: "+";
-        color: $buttongrey;
+        top: 60%;
+        font-family: 'entypo', sans-serif;
+        content: "\e760";
+        color: $textgrey;
         font-size: 1.5em;
         margin-top: -0.7em;
       }
       &.open:after{
-        content: "-";
+        content: "\e763";
       }
     }
-    .description{
-      margin-bottom: 15px;
+  }
+}
+.challenge{
+  @extend .seperator;
+  .date{
+    padding: 20px 3%;
+    position: relative;
+    font-size: 24px;
+    .title{
+      display: block;
+      font-size: 15px;
+      color: $textgrey;
     }
+
+  }
+  .description{
+    margin-bottom: 15px;
   }
 }
 

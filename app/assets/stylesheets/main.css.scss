@@ -2,6 +2,12 @@
 @import 'buttons';
 @import 'challenges';
 @import 'form';
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
 
 body{
   background-color: $background;
@@ -36,11 +42,11 @@ h1{
   line-height: 1.0;
 }
 
-.notice{
+.notice, .alert{
   padding: 0 3%;
-}
-.alert{
-  padding: 0 3%;
+  margin: 0;
+  font-size: 15px;
+  color: $textgrey;
 }
 
 .seperator{
@@ -66,19 +72,31 @@ h1{
       text-align: right;
     }
   }
-  .navi{
-    padding: 5% 0;
-    a, a:link{
-      font-size: 15px;
+  .logo{
+    background-color: $seafoam;
+    padding: 20px 0;
+    .logopic{
+      background: url("logo.png");
+      background-size: 95.5px 176.5px;
+      width: 96.5px;
+      height: 176.5px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.navi{
+  padding: 5% 0;
+  a, a:link{
+    font-size: 15px;
+    color: $textgrey;
+    display: inline-block;
+    &:after{
+      content: " |";
       color: $textgrey;
-      display: inline-block;
-      &:after{
-        content: " |";
-        color: $textgrey;
-      }
-      &:last-child:after{
-        content: "";
-      }
+    }
+    &:last-child:after{
+      content: "";
     }
   }
 }

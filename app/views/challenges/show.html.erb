@@ -1,24 +1,13 @@
-<div class="header">
-  <div class="content">
-    <div class="headline">
-      <h1 class="lime">
-        <%= @challenge.date.to_s(:day_and_month) %>
-      </h1>
-    </div>
-    <div class="navi">
-      <%= link_to 'Home', root_path %>
-    </div>
+<div class="challenge">
+  <div class="date <%= @challenge.approved ? "entypo-check" : "" %>">
+    <%= @challenge.date.to_s(:day_and_month) %>
+    <span class="title"><%= @challenge.title %></span>
   </div>
-</div>
 
-<div class="content">
-  <div class="challenge">
-    <p>
-      <%= @challenge.title %>
-    </p>
-    <p>
+  <div class="content">
+    <div class="description">
       # <%= @challenge.text %>
-    </p>
+    </div>
 
     <% if @challenge.answerPic.present? %>
       <%= image_tag @challenge.answerPic, class: 'answer_pic' %>
@@ -29,8 +18,13 @@
         <%= @challenge.answerText %>
       </p>
     <% end %>
+
+    <% if @challenge.approved? %>
+      <p>
+        <a href="http://m.facebook.com/sharer.php?u=<%= challenge_url(@challenge) %>" class="button">Share</a>
+      </p>
+    <% end %>
   </div>
-  <a href="http://m.facebook.com/sharer.php?u=<%= challenge_url(@challenge) %>" class="button">Share</a>
 </div>
 
 

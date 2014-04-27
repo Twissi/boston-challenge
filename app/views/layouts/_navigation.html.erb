@@ -1,25 +1,19 @@
-<div class="header">
+<div class="navi">
+  <% if user_signed_in? && current_user.admin? %>
+    <div class="content">
+        <%= link_to "New Challenge", new_admin_challenge_path %>
+        <%= link_to 'Manage Challenges', admin_challenges_path %>
+    </div>
+  <% end %>
   <div class="content">
-    <div class="headline">
-      <h1 class="lime">
-        The Boston Challenge
-      </h1>
-      <% if user_signed_in? && current_user.admin? %>
-        <div class="info">
-          <%= link_to "New Challenge", new_admin_challenge_path %>
-        </div>
-      <% end %>
-    </div>
-
-    <div class="navi">
-      <%= link_to 'About', pages_about_path %>
-      <% if user_signed_in? %>
-        <% if current_user.admin? %>
-          <%= link_to 'Manage Challenges', admin_challenges_path %>
-        <% end %>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      <% end %>
+    <%= link_to 'The Challenges', root_path %>
+    <%= link_to 'About', pages_about_path %>
+    <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+    <% else %>
       <%= link_to 'Login', new_user_session_path, class: :info unless user_signed_in? %>
-    </div>
+    <% end %>
   </div>
 </div>
+
+

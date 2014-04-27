@@ -1,6 +1,3 @@
-<% if challenge.answerPic.present? %>
-  <%= image_tag challenge.answerPic, class: 'answer_pic' %>
-<% end %>
 <%= form_for challenge, url: challenge_path( challenge ) do |f| %>
   <div>
     <%= f.text_area :answerText, placeholder: 'How did you solve the challenge?'%>

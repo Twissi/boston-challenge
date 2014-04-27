@@ -10,7 +10,7 @@ select {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
   background-color: $background;
-  border: 1px solid $buttongrey;
+  border: 1px solid $textgrey;
   padding: 8px 10px;
   color: $white;
 }
@@ -26,7 +26,7 @@ input[type="file"]{
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: $buttongrey;
+  background-color: $textgrey;
   color: $white;
   border: none;
   padding: 8px 10px;

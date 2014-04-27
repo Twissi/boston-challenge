@@ -1,9 +1,0 @@
-<% if challenge.answerPic.present? %>
-  <%= image_tag challenge.answerPic, class: 'answer_pic' %>
-<% end %>
-
-<% if challenge.answerText.present? %>
-  <p><%= challenge.answerText %></p>
-<% end %>
-
-<%= link_to 'Show', challenge, class: 'button' %>
