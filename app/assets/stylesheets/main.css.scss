@@ -60,26 +60,25 @@ h1{
 }
 
 .header{
-  @extend .seperator;
+  position: relative;
   .headline{
-    padding-right: 30%;
-    position: relative;
-    .info{
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 30%;
-      text-align: right;
-    }
+    background-color: $seafoam;
+    width: 100%;
+    text-align: center;
+    color: $black;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.0;
+    padding-top: 10px;
   }
   .logo{
     background-color: $seafoam;
     padding: 20px 0;
     .logopic{
       background: url(image-path('logo.png'));
-      background-size: 95.5px 176.5px;
+      background-size: 95.5px 103.5px;
       width: 96.5px;
-      height: 176.5px;
+      height: 103.5px;
       margin: 0 auto;
     }
   }
