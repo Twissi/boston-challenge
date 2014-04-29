@@ -17,3 +17,8 @@
 
 # Ignore uploads:
 /public/uploads/
+
+# Ignore env files
+.env.*
+
+*.DS_Store

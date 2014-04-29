@@ -19,6 +19,8 @@ gem 'pundit'
 gem 'carrierwave'
 gem 'fog', '~> 1.3.1'
 
+gem 'dotenv-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -27,7 +29,6 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'pry'
-  gem 'dotenv-rails'
 end
 
 group :production do
