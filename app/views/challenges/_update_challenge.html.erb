@@ -3,8 +3,12 @@
     <%= f.text_area :answerText, placeholder: 'How did you solve the challenge?'%>
   </div>
 
+<% if challenge.answerPic.present? %>
+  <%= image_tag challenge.answerPic, class: 'answer_pic' %>
+<% end %>
+
   <div>
-    <a id="<%= challenge.id %>-upload" class="button uploader-link">Add pic</a>
+    <a id="<%= challenge.id %>-upload" class="button uploader-link">Change pic</a>
     <%= f.file_field :answerPic, class:'hidden', id:challenge.id.to_s+'-upload-form' %>
   </div>
   <%= f.submit "Solve!", class: 'button' %>
