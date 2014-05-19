@@ -1,11 +1,13 @@
 class ChallengesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_challenge, only: [:show, :edit, :update]
+  has_scope :approved, :type => :boolean
+  has_scope :not_approved, :type => :boolean
 
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = policy_scope( Challenge ).order( date: :desc)
+    @challenges = policy_scope( apply_scopes(Challenge).all ).order( date: :desc)
     authorize @challenges
   end
 

@@ -19,7 +19,11 @@ gem 'pundit'
 gem 'carrierwave'
 gem 'fog', '~> 1.3.1'
 
+# Manage environment vars
 gem 'dotenv-rails'
+
+# Use filters
+gem 'has_scope'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
