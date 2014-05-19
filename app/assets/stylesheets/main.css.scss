@@ -13,11 +13,13 @@ body{
   background-color: $background;
   color: $white;
   font-family: 'Roboto', Verdana, sans-serif;
+  font-weight: 100;
   font-size: 18px;
   margin: 0;
   padding: 0;
   input, textarea{
     font-family: 'Roboto', Verdana, sans-serif;
+    font-weight: 100;
     font-size: 18px;
   }
 }
@@ -63,6 +65,7 @@ h1{
   position: relative;
   .headline{
     background-color: $seafoam;
+    font-weight: 400;
     width: 100%;
     text-align: center;
     color: $black;
@@ -73,7 +76,7 @@ h1{
   }
   .logo{
     background-color: $seafoam;
-    padding: 20px 0;
+    padding: 10px 0;
     .logopic{
       background: url(image-path('logo.png'));
       background-size: 95.5px 103.5px;
