@@ -1,11 +1,15 @@
-<div class="">
+<div class="tags">
   <%= link_to '#all', challenges_path, class: 'button_tag' %>
   <%=
-    if @current_scopes.has_key? :not_approved
+    if !@current_scopes.has_key? :approved
       link_to '#approved', challenges_path(approved: "true"), class: 'button_tag'
-    else
+    end
+  %>
+  <%=
+    if !@current_scopes.has_key? :not_approved
       link_to '#not_approved', challenges_path(not_approved: "true"), class: 'button_tag'
     end
   %>
+  <%= @current_scopes.inspect %>
 </div>
 
