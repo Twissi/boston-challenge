@@ -6,8 +6,9 @@ class Admin::ChallengesController < ApplicationController
   # GET /challenges
   # GET /challenges.json
   def index
-    @challenges = Challenge.all.order( date: :desc)
+    @challenges = apply_scopes(Challenge).all.order( date: :desc)
     authorize @challenges
+    @current_scopes = current_scopes
   end
 
   # GET /challenges/1
