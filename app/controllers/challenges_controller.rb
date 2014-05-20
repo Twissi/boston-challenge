@@ -9,6 +9,7 @@ class ChallengesController < ApplicationController
   def index
     @challenges = policy_scope( apply_scopes(Challenge).all ).order( date: :desc)
     authorize @challenges
+    @current_scopes = current_scopes
   end
 
   # GET /challenges/1
